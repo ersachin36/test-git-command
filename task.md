@@ -1,58 +1,77 @@
-# Installation  of git (DONE)
-   - windows - gitbash online download
-   - mac
-    brew install git
-   - linux - gitbash follow commands provided on docs
+# Git Setup and Basic Workflow Commands
 
-   common use git bash
+## Initial Setup
 
-# Create a git account | github , gitlab, bitbucket
+1. Create accounts:
+   - Github: Visit github.com and sign up
+   - Gitlab: Visit gitlab.com and sign up
+   - Bitbucket: Visit bitbucket.org and sign up
 
-# Generate SSH Key 
-  - ssh-keygen -t rsa -b 4096 -C "your email" 
-  - once above done copy and paste ssh keys on github, gitlab, bitbucket
+2. Create new repository:
+   - Through web interface of chosen platform
+   - Or use existing repository
 
-  IN General
-  Local Repo ----> SSH-kEY ----> Remote Repo 
+3. Generate SSH key:
+   ```bash
+   ssh-keygen -t ed25519 -C "your_email@example.com"
+   ```
 
-  # test with ssh-agent 
-  eval "$(ssh-agent -s)"
-  ssh-add ~/.ssh/id_rsa_er_sachin_36
+4. Add SSH key to account:
+   ```bash
+   # Copy SSH key
+   cat ~/.ssh/id_ed25519.pub
+   # Add to platform's SSH settings
+   ```
 
-  Local Repo is Connected with Remote Repo through SSH-KEY
+5. Initialize git repository:
+   ```bash
+   git init
+   ```
 
-# Basic Git Commands
+6. Add remote URL:
+   ```bash
+   git remote add origin git@github.com:username/repository.git
+   ```
 
-#
+## Basic Workflow Commands
 
+7. Make and stage changes:
+   ```bash
+   # Make your changes to files
+   
+   # Stage changes
+   git add .  # Add all changes
+   # OR
+   git add <filename>  # Add specific file
+   ```
 
-# Project 
-  - any org 
-      - will create a repo on (github , gitlab. bitbucket)
-      - they will invite to collaborate
-      - first you have to register there and then you can collaborate
+8. Commit changes:
+   ```bash
+   git commit -m "Your commit message"
+   ```
 
- - first repo 
+9. Push changes:
+   ```bash
+   git push origin main
+   ```
 
+## Repeat Development Cycle
 
- =======
+10. Make and push new changes:
+    ```bash
+    # Make changes to files
+    git add .
+    git commit -m "New changes"
+    git push origin main
+    ```
 
- 1. Account Creation
- 2. SSH Key Geneartion
- 3. Make a folder
- 4. initialize git  | git init
- 5. git remote add origin <remote-repo-url> eg: if ssh using then use ssh url , origin play as variable name
- 6. We can check file status | git status (read , green files)
-    - red : untracked files
-    - green : tracked files
-    - yellow : modified files
- 7 git add . 
- 8. git commit -m "message"
- 9  git push origin HEAD
+## Merging
 
-
- # Once above done
-  - either you will create or update files
-  - either you will take pull from repo
-
-  
+11. Merge branches:
+    ```bash
+    # Switch to target branch
+    git checkout main
+    
+    # Merge source branch
+    git merge <source-branch>
+    ```
