@@ -55,4 +55,6 @@
   - either you will create or update files
   - either you will take pull from repo
 
-  
+# Create a branch
+  - if someone asked to work on a different branch for your feature
+    - you can create a branch (make sure you asked what will be the source branch to your lead , for now keeping master)
