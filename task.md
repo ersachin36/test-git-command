@@ -46,3 +46,5 @@
     - red : untracked files
     - green : tracked files
     - yellow : modified files
+ 7 git add . 
+ 8. git commit -m "message"
