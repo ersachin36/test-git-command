@@ -48,3 +48,11 @@
     - yellow : modified files
  7 git add . 
  8. git commit -m "message"
+ 9  git push origin HEAD
+
+
+ # Once above done
+  - either you will create or update files
+  - either you will take pull from repo
+
+  
